@@ -1,0 +1,132 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: file:///media/fuse/drivefs-a2941bd4ada8d01b96ca6ce369d904f6/root/index.html
+Subject: =?utf-8?Q?Jogo=20da=20Mem=C3=B3ria?=
+Date: Thu, 24 Oct 2024 19:17:52 -0300
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--rWpBkTq21tgUB0EjUmKgzrDHMe7pW8SWsXVGn6bxMu----"
+
+
+------MultipartBoundary--rWpBkTq21tgUB0EjUmKgzrDHMe7pW8SWsXVGn6bxMu----
+Content-Type: text/html
+Content-ID: <frame-F663E44C79614E9CC91A6CEE99D2A112@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///media/fuse/drivefs-a2941bd4ada8d01b96ca6ce369d904f6/root/index.html
+
+<!DOCTYPE html><html lang=3D"pt-BR"><head><meta http-equiv=3D"Content-Type"=
+ content=3D"text/html; charset=3DUTF-8"><link rel=3D"stylesheet" type=3D"te=
+xt/css" href=3D"cid:css-23b03026-0650-40ab-be2e-70e84af43691@mhtml.blink" /=
+>
+   =20
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <title>Jogo da Mem=C3=B3ria</title>
+   =20
+</head>
+<body>
+    <h1>Jogo da Mem=C3=B3ria</h1>
+    <div id=3D"info">
+        <span>N=C3=ADvel: <span id=3D"level-display">1</span></span>
+        <span>Pontua=C3=A7=C3=A3o: <span id=3D"score">170</span></span>
+        <span id=3D"attempts">Tentativas Restantes: <span id=3D"remaining-a=
+ttempts">14</span></span>
+        <span id=3D"timer">Tempo: <span id=3D"time">12</span> segundos</spa=
+n>
+    </div>
+    <div class=3D"game-board" id=3D"game-board"><div class=3D"card" data-va=
+lue=3D"=F0=9F=90=B1"></div><div class=3D"card" data-value=3D"=F0=9F=90=B6">=
+</div><div class=3D"card" data-value=3D"=F0=9F=90=B6"></div><div class=3D"c=
+ard" data-value=3D"=F0=9F=90=B1"></div></div>
+    <button id=3D"reset">Reiniciar Jogo</button>
+    <button id=3D"pause">Pausar</button>
+    <button id=3D"next-level" style=3D"display: none;">Pr=C3=B3ximo N=C3=AD=
+vel</button>
+
+    <div class=3D"modal" id=3D"modal" style=3D"display: none;">
+        <div class=3D"modal-content">
+            <p id=3D"modal-message">O tempo acabou! Fim de jogo.</p>
+            <table class=3D"score-table">
+                <thead>
+                    <tr>
+                        <th>Pontua=C3=A7=C3=A3o Atual</th>
+                        <th>Maior Pontua=C3=A7=C3=A3o</th>
+                        <th>N=C3=ADvel M=C3=A1ximo Alcan=C3=A7ado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id=3D"current-score">170</td>
+                        <td id=3D"high-score">200</td>
+                        <td id=3D"max-level">6</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id=3D"restart-game">Reiniciar Jogo</button>
+            <button id=3D"close-modal">Fechar</button>
+        </div>
+    </div>
+   =20
+   =20
+
+</body></html>
+------MultipartBoundary--rWpBkTq21tgUB0EjUmKgzrDHMe7pW8SWsXVGn6bxMu----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-23b03026-0650-40ab-be2e-70e84af43691@mhtml.blink
+
+@charset "utf-8";
+
+body { font-family: Arial, sans-serif; display: flex; flex-direction: colum=
+n; align-items: center; justify-content: center; height: 100vh; margin: 0px=
+; background: linear-gradient(rgb(240, 248, 255), rgb(224, 255, 255)); colo=
+r: rgb(51, 51, 51); }
+
+h1 { margin-bottom: 20px; color: rgb(0, 119, 204); }
+
+.game-board { display: grid; grid-template-columns: repeat(4, 120px); gap: =
+15px; margin-bottom: 20px; }
+
+.card { width: 120px; height: 120px; background-color: rgb(247, 247, 247); =
+display: flex; align-items: center; justify-content: center; font-size: 40p=
+x; cursor: pointer; border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.2) 0px=
+ 4px 10px; transition: 0.3s; }
+
+.card.flipped { background-color: rgb(255, 255, 255); transform: rotateY(18=
+0deg); box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 20px; }
+
+.card.matched { background-color: rgb(170, 255, 170); pointer-events: none;=
+ }
+
+#info { margin-bottom: 20px; font-size: 20px; }
+
+#timer { color: red; }
+
+#reset, #next-level, #pause { padding: 10px 20px; font-size: 16px; backgrou=
+nd-color: rgb(0, 119, 204); color: white; border: none; border-radius: 5px;=
+ cursor: pointer; transition: background-color 0.3s; margin-top: 10px; }
+
+#reset:hover, #next-level:hover, #pause:hover { background-color: rgb(0, 95=
+, 163); }
+
+#next-level { display: none; }
+
+.modal { display: none; position: fixed; inset: 0px; background: rgba(0, 0,=
+ 0, 0.7); color: white; justify-content: center; align-items: center; font-=
+size: 24px; z-index: 10; }
+
+.modal-content { background: rgb(51, 51, 51); padding: 20px; border-radius:=
+ 10px; text-align: center; }
+
+.modal button { background: rgb(0, 119, 204); border: none; padding: 10px 1=
+5px; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+
+.modal button:hover { background: rgb(0, 95, 163); }
+
+.score-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+
+.score-table th, .score-table td { border: 1px solid rgb(0, 119, 204); padd=
+ing: 10px; text-align: center; font-size: 18px; }
+
+.score-table th { background-color: rgb(0, 119, 204); color: white; }
+------MultipartBoundary--rWpBkTq21tgUB0EjUmKgzrDHMe7pW8SWsXVGn6bxMu------
